@@ -49,6 +49,10 @@ Route::post('post-registration', [
 // đăng nhập thành công chạy về dashboard
 Route::get('/', [LoginController::class, 'dashboard']);
 
+Route::get('dashboard', [
+    DashBoardController::class,
+    'index'
+]);
 Route::get('product', [
     ProductController::class,
     'index'
@@ -116,6 +120,26 @@ Route::get('order_edit/{id}', [
 
 Route::post('orderline_update/{id}', [
     OrderLineController::class,
+    'update'
+]);
+
+Route::get('template_edit/{id}', [
+    TemplateController::class,
+    'edit'
+]);
+
+Route::post('template_update/{id}', [
+    TemplateController::class,
+    'update'
+]);
+
+Route::get('product_edit/{id}', [
+    ProductController::class,
+    'edit'
+]);
+
+Route::post('product_update/{id}', [
+    ProductController::class,
     'update'
 ]);
 
@@ -310,10 +334,21 @@ Route::post('ipep/store', [
     'store'
 ]);
 
-Route::get('/ipep_done/{id}', [
+Route::post('/ipep_done/{id}', [
     IpEpController::class,
     'done'
 ]);
+
+Route::get('/fail/{id}',[
+    IpEpController::class,
+    'fail'
+]);
+
+Route::post('/fail_save/{id}',[
+    IpEpController::class,
+    'fail_save'
+]);
+
 Route::get('lang/{locale}', [App\Http\Controllers\LanguageController::class, 'index']);
 
 Route::get('/search/', [
@@ -325,7 +360,12 @@ Route::get('/portal', [
     'index'
 ]);
 
-Route::get('/product/{id}', [
+Route::get('/product_delete/{id}', [
     ProductController::class,
+    'delete'
+]);
+
+Route::get('/template_delete/{id}', [
+    TemplateController::class,
     'delete'
 ]);
