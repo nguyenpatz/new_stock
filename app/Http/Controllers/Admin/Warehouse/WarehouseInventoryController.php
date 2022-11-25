@@ -33,4 +33,26 @@ class WarehouseInventoryController extends Controller
             //     'wis' => $wis,
             // ]);
         }
+
+        public function create() {
+
+            // dùng template để lấy amount gán actual number
+            // vì mặc định actual number chính bằng amount
+            $template = DB::table('template')->select('id as tid', 'name as tpname', 'amount');
+            $template = $template->get();
+            
+            // dùng employee để lấy name và id của employee
+            $employee = DB::table('employee')->select('id as eid', 'name as ename');
+            $employee = $employee->get();
+
+
+            $title = 'Warehouse inventory';
+            
+            
+            return view('/admin/warehouse/create_inventory', [
+                'title' => $title,
+                'templates' => $template,
+                'employees' => $employee,
+            ]);
+        }
     }

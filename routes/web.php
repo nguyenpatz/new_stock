@@ -288,6 +288,11 @@ Route::get('warehouseinventory', [
     'index'
 ]);
 
+Route::get('warehouseinventory_create', [
+    WarehouseInventoryController::class,
+    'create'
+]);
+
 Route::get('/invoice_delete/{id}', [
     InvoiceController::class,
     'delete'

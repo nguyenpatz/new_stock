@@ -25,9 +25,9 @@ class DatabaseSeeder extends Seeder
 
         
         // Dùng cái này thì tắt comment cái đó 
-        $this->call(WarehouseSeeder::class);
-        $this->call(BankAccountSeeder::class);
-        $this->call(PartnerSeeder::class);
-        $this->call(EmployeeSeeder::class);
+        // $this->call(WarehouseSeeder::class);
+        // $this->call(BankAccountSeeder::class);
+        // $this->call(PartnerSeeder::class);
+        // $this->call(EmployeeSeeder::class);
     }
 }

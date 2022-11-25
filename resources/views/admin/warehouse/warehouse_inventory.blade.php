@@ -5,6 +5,12 @@
 </head>
 @include('admin.main')
         <!-- Small boxes (Stat box) -->
+        <!-- add button create for warehouse_inventory -->
+<a href="/warehouseinventory_create">
+  <button class="btn btn-success">
+		{{__('lang.create')}}
+	</button>
+</a>
 <table class="table table-bordered">
     <thead>
      <tr class="bg-success">
