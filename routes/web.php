@@ -84,6 +84,16 @@ Route::get('category', [
     'index'
 ]);
 
+Route::get('category_create', [
+    CategoryController::class,
+    'create'
+])->name('category.create');
+
+Route::post('category/create', [
+    CategoryController::class,
+    'store'
+])->name('category.store');
+
 Route::get('order', [
         OrderController::class,
         'index'
@@ -249,7 +259,7 @@ Route::get('warehouse', [
     'index'
 ]);
 
-Route::get('WarehouseInventory', [
+Route::get('warehouseinventory', [
     WarehouseInventoryController::class,
     'index'
 ]);
